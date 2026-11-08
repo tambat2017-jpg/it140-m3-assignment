@@ -1,27 +1,26 @@
 # IT 140 Module Three Assignment
-# Paycheck Calculator Pseudocode Template
-#
-# Replace every TODO prompt with your own pseudocode.
-# Keep this file in .pseudo format for submission.
-#
-# Your finished pseudocode should represent the same logic as your flowchart.
-# Use clear indentation and ALLCAPS pseudocode keywords, such as GET (input),
-# PUT (output), LET (assignment), IF, ELSE, and ENDIF where they fit your design.
+# Paycheck Calculator Pseudocode
 
 START paycheck_calculator
 
-    TODO: Obtain the required program input.
+    # Obtain the hours worked for the week.
+    PUT "Enter the number of hours worked:"
+    GET hours_worked
 
-    IF TODO: Specify the condition for the applicable pay rule.
-        TODO: List the processing steps for the true decision path.
+    IF hours_worked > 40
+        LET regular_pay = 40 * 20
+        LET overtime_hours = hours_worked - 40
+        LET overtime_pay = overtime_hours * 30
+        LET weekly_pay = regular_pay + overtime_pay
     ELSE
-        TODO: List the processing steps for the false decision path.
+        LET weekly_pay = hours_worked * 20
     ENDIF
 
-    TODO: Output the calculated weekly paycheck.
+    # Output the final weekly paycheck.
+    PUT "The weekly paycheck is $", weekly_pay
 
 END paycheck_calculator
 
 
 # === References ===
-# TODO: List outside sources or assistance you actually used, or delete this line.
+# Course assignment requirements and SRS for the paycheck calculator design.
