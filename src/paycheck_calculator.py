@@ -1,17 +1,18 @@
-"""TODO: Replace with a one-line summary of the optional program (<73 chars).
+"""Calculate weekly pay using regular and overtime rates.
 
 Input:
-    TODO: Replace with the major input, including its type and source.
+    Numeric hours worked during the week, entered by the user.
 
 Process:
-    TODO: Replace with a brief description of the major processing.
+    Pay the first 40 hours at the regular rate and hours above 40 at
+    the overtime rate.
 
 Output:
-    TODO: Replace with the major output, including its destination.
+    The employee's weekly paycheck, displayed on the screen.
 
 Typical usage example:
-    TODO: Replace with an original hours-worked input example.
-    TODO: Replace with the resulting paycheck output for your example.
+    Enter 35 hours worked.
+    The weekly paycheck is $700.0.
 """
 
 # === Constants ===
@@ -24,17 +25,19 @@ REGULAR_HOURS_LIMIT = 40
 def main() -> None:
     """Run the optional paycheck calculator practice program."""
 
-    # TODO: Replace with code to obtain hours worked in a numeric form.
+    hours_worked = float(input("Enter the number of hours worked: "))
 
-    # TODO: Replace with decision branching and processing from your design.
+    if hours_worked > REGULAR_HOURS_LIMIT:
+        regular_pay = REGULAR_HOURS_LIMIT * REGULAR_RATE
+        overtime_hours = hours_worked - REGULAR_HOURS_LIMIT
+        overtime_pay = overtime_hours * OVERTIME_RATE
+        weekly_pay = regular_pay + overtime_pay
+    else:
+        weekly_pay = hours_worked * REGULAR_RATE
 
-    # TODO: Replace with code to display the calculated weekly paycheck.
+    print(f"The weekly paycheck is ${weekly_pay}")
 
 
 # === Main Guard ===
 if __name__ == "__main__":
     main()
-
-
-# === References ===
-# TODO: Add APA-style reference for outside help you used, or delete this line.
